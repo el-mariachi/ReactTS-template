@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Mouse } from './Mouse';
-import { Cat } from './Cat';
+import Cat from './CatHOC';
 
 class MouseTracker extends Component {
   render() {
