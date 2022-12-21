@@ -1,5 +1,9 @@
 import { FC } from "react"
 
-export const Input: FC<any> = ({onChange, value, placeholder}) => (
+type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+    customField: string;
+}
+
+export const Input: FC<Props> = ({onChange, value, placeholder}) => (
     <input onChange={onChange} value={value} placeholder={placeholder}/>
 );

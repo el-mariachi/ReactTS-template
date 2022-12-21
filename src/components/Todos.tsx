@@ -7,7 +7,7 @@ type Todo = {
     id: number;
 }
 
-const Todos: FC = () => {
+const Todos: FC<{}> = () => {
   const [text, setText] = useState<string>('');
   const [filterText, setFilterText] = useState<string>('');
   const [todos, setTodos] = useState<Todo[]>([]);

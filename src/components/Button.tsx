@@ -1,6 +1,9 @@
 import { FC } from "react"
 
-export const Button: FC<any> = ({onClick, children}) => (
+type OwnProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type Props = OwnProps;
+
+export const Button: FC<Props> = ({onClick, children}) => (
     <button onClick={onClick}>
         {children}
     </button>
