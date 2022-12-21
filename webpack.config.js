@@ -11,10 +11,12 @@ module.exports = {
                 test: /\.ts$/i,
                 exclude: /node_modules/,
                 loader: 'ts-loader',
-            }
-        ]
+            },
+        ],
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: 'src/views/index.html'
-    })]
-}
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/views/index.html',
+        }),
+    ],
+};
