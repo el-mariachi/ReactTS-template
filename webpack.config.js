@@ -12,6 +12,10 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'ts-loader',
             },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
         ],
     },
     plugins: [
