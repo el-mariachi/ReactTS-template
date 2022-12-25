@@ -1,5 +1,5 @@
-// import {App} from './App';
-import App from './cool_ex';
+import { App } from './App';
+// import App from './cool_ex';
 import { createElement } from 'react';
 import { render } from 'react-dom';
 

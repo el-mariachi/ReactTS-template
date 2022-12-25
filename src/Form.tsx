@@ -2,6 +2,7 @@
 // import Form from 'react-bootstrap/Form';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import './Form.scss';
 
 type FormValues = {
   email: string;
@@ -15,7 +16,7 @@ function BasicExample() {
     formState: { errors },
     reset,
   } = useForm<FormValues>({
-    mode: 'onTouched',
+    mode: 'onBlur',
     reValidateMode: 'onSubmit',
     defaultValues: {
       email: '',
@@ -30,13 +31,15 @@ function BasicExample() {
   };
   return (
     <Container className="pt-5">
-      <Form onSubmit={handleSubmit(formSubmit)}>
+      <Form onSubmit={handleSubmit(formSubmit)} autoComplete="none">
         <Form.Group className="mb3" controlId="formBasicEmail">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type="email"
             isInvalid={errors.email !== undefined}
             placeholder="Enter email"
+            role={'presentation'}
+            autoComplete="none"
             {...register('email', {
               required: 'Пожалуйста, заполните поле',
               pattern: {
@@ -56,11 +59,12 @@ function BasicExample() {
             type="password"
             isInvalid={errors.password !== undefined}
             placeholder="Password"
+            autoComplete="none"
             {...register('password', {
               required: 'Пожалуйста, укажите пароль.',
               pattern: {
-                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                message: 'Неверный формат email',
+                value: /^.{4,}$/,
+                message: 'Неверный формат пароля',
               },
             })}
           />
